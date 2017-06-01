@@ -1,2 +1,1 @@
-config:
-  hello: world-dev
+hello: world-dev
