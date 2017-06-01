@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: user-server
+    name: userserver
   cloud:
     config:
       discovery:
