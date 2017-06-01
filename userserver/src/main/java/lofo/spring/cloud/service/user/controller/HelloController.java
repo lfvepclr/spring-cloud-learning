@@ -16,6 +16,7 @@ public class HelloController {
     private String configStr;
 
 
+    @RequestMapping("hello")
     public String hello() {
         return "hello" + configStr;
     }
