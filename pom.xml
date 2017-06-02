@@ -10,6 +10,7 @@
         <module>eurekaserver</module>
         <module>userserver</module>
         <module>balancecenter</module>
+        <module>apigateway</module>
     </modules>
     <packaging>pom</packaging>
 
