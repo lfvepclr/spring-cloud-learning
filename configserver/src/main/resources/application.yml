@@ -10,9 +10,10 @@ spring:
           basedir: target/config
           search-paths: config-repo/dev
 
-management:
-  security:
-    enabled: false
+# 禁用管理安全
+#management:
+#  security:
+#    enabled: false
 
 eureka:
   client:
