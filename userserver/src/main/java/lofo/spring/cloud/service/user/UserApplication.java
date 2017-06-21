@@ -11,8 +11,8 @@ import org.springframework.retry.annotation.EnableRetry;
 @EnableRetry
 @EnableDiscoveryClient
 @SpringBootApplication
-public class App {
+public class UserApplication {
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(UserApplication.class, args);
     }
 }

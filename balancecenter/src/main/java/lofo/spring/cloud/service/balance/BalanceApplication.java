@@ -13,8 +13,8 @@ import org.springframework.retry.annotation.EnableRetry;
 @EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
-public class App {
+public class BalanceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(BalanceApplication.class, args);
     }
 }

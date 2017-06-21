@@ -11,6 +11,7 @@
         <module>userserver</module>
         <module>balancecenter</module>
         <module>apigateway</module>
+        <module>metrix</module>
     </modules>
     <packaging>pom</packaging>
 
