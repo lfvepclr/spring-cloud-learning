@@ -1,0 +1,98 @@
+version: '3.1'
+services:
+  discovery1:
+    container_name: discovery1
+    image: masterdata/discovery:${tag}
+    environment:
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://discovery2:8091/eureka/
+      - SPRING_PROFILES_ACTIVE=${env}
+    networks:
+      - springcloudnet
+
+  discovery2:
+    container_name: discovery2
+    image: springcloud/discovery:${tag}
+    environment:
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://discovery1:8091/eureka/
+      - SPRING_PROFILES_ACTIVE=${env}
+    networks:
+      - springcloudnet
+
+  registry:
+    image: springcloud/registry:${tag}
+    container_name: registry
+    environment:
+      - SPRING_PROFILES_ACTIVE=${env}
+      - EUREKA_SERVER_LIST=http://discovery1:8761/eureka/,http://discovery2:8761/eureka/
+    ports:
+      - 8091:8091
+    networks:
+      - springcloudnet
+
+  config:
+    image: springcloud/config:${tag}
+    environment:
+      - SPRING_PROFILES_ACTIVE=${env}
+      - EUREKA_SERVER_LIST=http://discovery1:8761/eureka/,http://discovery2:8761/eureka/
+    ports:
+      - 8888:8888
+    depends_on:
+      - registry
+
+    networks:
+      - springcloudnet
+
+  monitor:
+    image: springcloud/monitor:${tag}
+    environment:
+      - SPRING_PROFILES_ACTIVE=${env}
+      - EUREKA_SERVER_LIST=http://discovery1:8761/eureka/,http://discovery2:8761/eureka/
+    ports:
+      - 8066:8066
+    depends_on:
+      - registry
+      - config
+    networks:
+      - springcloudnet
+
+  gateway:
+    image: springcloud/gateway:${tag}
+    environment:
+      - SPRING_PROFILES_ACTIVE=${env}
+      - EUREKA_SERVER_LIST=http://discovery1:8761/eureka/,http://discovery2:8761/eureka/
+    ports:
+      - 8080:8080
+    depends_on:
+      - registry
+      - config
+    networks:
+      - springcloudnet
+
+  server-user:
+    image: springcloud/server-user:${tag}
+        environment:
+          - SPRING_PROFILES_ACTIVE=${env}
+          - EUREKA_SERVER_LIST=http://discovery1:8761/eureka/,http://discovery2:8761/eureka/
+        ports:
+          - 8011:8011
+        depends_on:
+          - registry
+          - config
+        networks:
+          - springcloudnet
+
+  server-balance-center:
+    image: springcloud/server-balance-center:${tag}
+        environment:
+          - SPRING_PROFILES_ACTIVE=${env}
+          - EUREKA_SERVER_LIST=http://discovery1:8761/eureka/,http://discovery2:8761/eureka/
+        ports:
+          - 8021:8021
+        depends_on:
+          - registry
+          - config
+        networks:
+          - springcloudnet
+
+networks:
+  springcloudnet:

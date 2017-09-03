@@ -6,12 +6,12 @@
     <artifactId>spring-cloud-learning</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>configserver</module>
-        <module>eurekaserver</module>
-        <module>userserver</module>
-        <module>balancecenter</module>
-        <module>apigateway</module>
-        <module>metrix</module>
+        <module>config</module>
+        <module>discovery</module>
+        <module>gateway</module>
+        <module>monitor</module>
+        <module>server-user</module>
+        <module>server-balance-center</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -20,12 +20,20 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <java.version>1.8</java.version>
+
+        <docker.maven.plugin.version>0.21.0</docker.maven.plugin.version>
+        <docker.prefix>springcloud</docker.prefix>
+        <docker.from>anapsix/alpine-java:8_server-jre</docker.from>
     </properties>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.2.RELEASE</version>
+        <groupId>io.spring.platform</groupId>
+        <artifactId>platform-bom</artifactId>
+        <version>Brussels-SR4</version>
+        <relativePath/><!-- lookup parent from repository -->
     </parent>
 
     <dependencyManagement>
@@ -33,7 +41,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Dalston.SR1</version>
+                <version>Dalston.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -41,6 +49,15 @@
     </dependencyManagement>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>${docker.maven.plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <!-- git info add to /info url-->
             <plugin>

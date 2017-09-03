@@ -1,0 +1,31 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lfvepclr/spring-cloud-learning
+          basedir: target/config
+          search-paths: config-repo/dev
+
+# 禁用管理安全
+#management:
+#  security:
+#    enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8091/eureka/
+    instance:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+---
+spring:
+  profiles: cloud
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_LIST}

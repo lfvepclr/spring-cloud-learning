@@ -1,0 +1,31 @@
+server:
+  port: 8011
+
+
+spring:
+  application:
+    name: user-server
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: configserver
+  profiles:
+    active: dev
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8091/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+
+---
+spring:
+  profiles: cloud
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_LIST}
