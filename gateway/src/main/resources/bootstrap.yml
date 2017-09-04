@@ -3,12 +3,12 @@ server:
 
 spring:
   application:
-    name: api-gateway
+    name: gateway
   cloud:
     config:
       discovery:
         enabled: true
-        service-id: configserver
+        service-id: config
   profiles:
     active: dev
 

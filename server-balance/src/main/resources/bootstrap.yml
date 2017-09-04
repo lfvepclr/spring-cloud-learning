@@ -3,12 +3,12 @@ server:
 
 spring:
   application:
-    name: balance-center-server
+    name: balance-server
   cloud:
     config:
       discovery:
         enabled: true
-        service-id: configserver
+        service-id: config
   profiles:
     active: dev
 
