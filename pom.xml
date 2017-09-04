@@ -11,7 +11,7 @@
         <module>gateway</module>
         <module>monitor</module>
         <module>server-user</module>
-        <module>server-balance-center</module>
+        <module>server-balance</module>
     </modules>
     <packaging>pom</packaging>
 
