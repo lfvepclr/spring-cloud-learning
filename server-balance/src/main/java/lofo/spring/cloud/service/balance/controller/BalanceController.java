@@ -22,7 +22,7 @@ public class BalanceController {
     @GetMapping("hello")
     public String hello() {
         logger.info("========结算中心 hello方法请求===========");
-        return userService.hello();
+         return userService.hello();
     }
 
 }

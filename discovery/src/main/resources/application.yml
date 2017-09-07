@@ -4,6 +4,18 @@ server:
 spring:
   application:
     name: discovery
+  cloud:
+    bus:
+      enabled: true
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          zkNodes: localhost
+          brokers: localhost
+          defaultZkPort: 2181
+          defaultBrokerPort: 9092
+
 
 eureka:
   instance:
@@ -14,6 +26,7 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
 
 ---
 spring:

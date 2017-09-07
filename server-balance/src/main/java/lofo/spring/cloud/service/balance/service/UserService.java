@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * Created by bestw on 6/1/2017.
  */
-@FeignClient(value = "USER-SERVER", fallback = UserServiceFallback.class)
-@RequestMapping("user")
+@FeignClient(value = "USER-SERVER", path = "user", fallback = UserServiceFallback.class)
 public interface UserService {
 
     @GetMapping("hello")
