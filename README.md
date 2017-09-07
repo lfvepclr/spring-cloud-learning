@@ -8,13 +8,13 @@
 - 添加**Spring Cloud Feign**、**Spring Cloud Ribbon**、**Spring Cloud Hystrix**整合
 
 使用到的Spring Cloud 组件:
-  - Spring Cloud Zuul
-  - Spring Cloud Eureka
-  - Spring Cloud Config
-  - Spring Cloud Bus-Kafka
-  - Spring Cloud Feign
-  - Spring Cloud Ribbon
-  - Spring Cloud Hystrix
+  - [x] Spring Cloud Zuul
+  - [x] Spring Cloud Eureka
+  - [x] Spring Cloud Config
+  - [x] Spring Cloud Bus-Kafka
+  - [x] Spring Cloud Feign
+  - [x] Spring Cloud Ribbon
+  - [x] Spring Cloud Hystrix
   
 待整合的：
   - [ ] Spring Security + JWT
