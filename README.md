@@ -17,6 +17,8 @@
   - [x] Spring Cloud Hystrix
   
 待整合的：
+  - [ ] Swagger2
+  - [ ] Google Protocol Buffers
   - [ ] Spring Security + JWT
   - [ ] Spring Cloud Stream
   - [ ] Spring Cloud Sleuth

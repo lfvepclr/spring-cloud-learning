@@ -24,6 +24,9 @@
 
         <java.version>1.8</java.version>
 
+        <protobuf.windows.execute.path>C:/portable Sowfort/protoc-3.4.0/bin/protoc.exe</protobuf.windows.execute.path>
+        <proto.executable>${protobuf.windows.execute.path}</proto.executable>
+        <protobuf.maven.plugin.version>0.5.0</protobuf.maven.plugin.version>
         <docker.maven.plugin.version>0.21.0</docker.maven.plugin.version>
         <docker.prefix>springcloud</docker.prefix>
         <docker.from>anapsix/alpine-java:8_server-jre</docker.from>
@@ -55,6 +58,15 @@
                     <groupId>io.fabric8</groupId>
                     <artifactId>docker-maven-plugin</artifactId>
                     <version>${docker.maven.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.xolstice.maven.plugins</groupId>
+                    <artifactId>protobuf-maven-plugin</artifactId>
+                    <version>${protobuf.maven.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
                 </plugin>
             </plugins>
         </pluginManagement>
