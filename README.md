@@ -20,4 +20,4 @@
   - [ ] Spring Security + JWT
   - [ ] Spring Cloud Stream
   - [ ] Spring Cloud Sleuth
-  - [ ] 分布式跟踪系统Zipkin Sky Walking
+  - [ ] 分布式跟踪系统Zipkin或Sky Walking
