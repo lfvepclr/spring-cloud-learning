@@ -4,7 +4,7 @@
 - 添加**docker-compose**支持
 - 添加**spring io platform**支持
 - 添加**Spring Boot Admin**监控模板
-- spring cloud 更新到**Dalston.SR3**版
+- **spring cloud**更新到**Dalston.SR4**版
 - 添加**Spring Cloud Feign**、**Spring Cloud Ribbon**、**Spring Cloud Hystrix**整合
 
 使用到的Spring Cloud 组件:
