@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: gateway
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: springcloud
   cloud:
     config:
       discovery:
@@ -12,6 +17,10 @@ spring:
   profiles:
     active: dev
 
+# 禁用管理安全
+#management:
+#  security:
+#    enabled: false
 
 eureka:
   client:

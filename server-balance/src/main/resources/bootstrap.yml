@@ -4,24 +4,23 @@ server:
 spring:
   application:
     name: balance-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: springcloud
   cloud:
     config:
       discovery:
         enabled: true
         service-id: config
-    bus:
-      enabled: true
-    stream:
-      default-binder: kafka
-      kafka:
-        binder:
-          zkNodes: localhost
-          brokers: localhost
-          defaultZkPort: 2181
-          defaultBrokerPort: 9092
   profiles:
     active: dev
 
+# 禁用管理安全
+#management:
+#  security:
+#    enabled: false
 
 feign:
   hystrix:

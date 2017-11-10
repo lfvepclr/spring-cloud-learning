@@ -2,6 +2,11 @@ server:
   port: 8888
 
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: springcloud
   cloud:
     config:
       server:
@@ -9,16 +14,6 @@ spring:
           uri: https://github.com/lfvepclr/spring-cloud-learning
           basedir: target/config
           search-paths: config-repo/dev
-    bus:
-      enabled: true
-    stream:
-      default-binder: kafka
-      kafka:
-        binder:
-          zkNodes: localhost
-          brokers: localhost
-          defaultZkPort: 2181
-          defaultBrokerPort: 9092
 
 # 禁用管理安全
 #management:
