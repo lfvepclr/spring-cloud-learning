@@ -16,12 +16,12 @@
   - [x] Spring Cloud Feign
   - [x] Spring Cloud Ribbon
   - [x] Spring Cloud Hystrix
+  - [x] Spring Cloud Stream - RabbitMQ
   
 待整合的：
   - [ ] Swagger2
   - [ ] Google Protocol Buffers
   - [ ] Spring Security + JWT
-  - [ ] Spring Cloud Stream
   - [ ] Spring Cloud Sleuth
   - [ ] 分布式跟踪系统Zipkin或Sky Walking
   - [ ] GraphQL
@@ -32,6 +32,3 @@
 ## RabbitMQ
 - docker 部署： 
 `docker run -d --name rabbitmq --publish 5671:5671 --publish 5672:5672 --publish 4369:4369 --publish 25672:25672 --publish 15671:15671 --publish 15672:15672 rabbitmq:management-alpine`
-- 访问http://localhost:15672，登录管理界面，进入Admin标签页，添加用户:   
-    用户名：springcloud   
-    密 码： springcloud 

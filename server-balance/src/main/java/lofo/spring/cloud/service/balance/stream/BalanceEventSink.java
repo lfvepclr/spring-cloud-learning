@@ -5,11 +5,11 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 
 @Slf4j
-@EnableBinding(BalanceEventSouce.class)
+@EnableBinding(BalanceSource.class)
 public class BalanceEventSink {
 
 
-    @StreamListener(BalanceEventSouce.BLANCE_INPUT)
+    @StreamListener(BalanceSource.BALANCE_START)
     public void receive(BalanceEvent event) {
         log.info("=====================Received:" + event.toString());
     }
