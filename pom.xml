@@ -12,6 +12,7 @@
         <module>monitor</module>
         <module>server-user</module>
         <module>server-balance</module>
+        <module>common</module>
     </modules>
     <packaging>pom</packaging>
 

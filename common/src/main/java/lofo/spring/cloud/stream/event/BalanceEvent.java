@@ -1,4 +1,4 @@
-package lofo.spring.cloud.service.balance.stream;
+package lofo.spring.cloud.stream.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
