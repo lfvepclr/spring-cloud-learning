@@ -8,7 +8,7 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 
 @Slf4j
 @EnableBinding(BalanceSource.class)
-public class BalanceEventSink {
+public class BalanceEventListener {
 
 
     @StreamListener(SourceNames.BALANCE_START)
